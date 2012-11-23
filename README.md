@@ -25,6 +25,11 @@ by using magic of `__set`.
 **Note that this is NOT possible without some extra magic.** 
 
 ```
-$ print $child->__toString();
+print $child->__toString();
+```
+
+prints
+
+```
 {"age":10,"parents":[{}]}
 ```
