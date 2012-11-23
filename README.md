@@ -1,6 +1,8 @@
 This is `StronglyTypedJSON` class for PHP.
 
 ```
+require 'StronglyTypedJSON.php';
+
 class Child extends StronglyTypedJSON {
   /** @var int */      private $age;
   /** @var Parent[] */ private $children;
