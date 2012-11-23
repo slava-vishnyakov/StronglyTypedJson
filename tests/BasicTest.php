@@ -1,6 +1,6 @@
 <?php
 
-require 'StronglyTypedJson.php';
+require '../lib/StronglyTypedJson.php';
 
 class Child extends StronglyTypedJson {
   /** @var int */     private $age;
@@ -47,11 +47,11 @@ class BasicTest extends PHPUnit_Framework_TestCase
 
   public function test4() {
     $child = new Child;
-    $this->assertEquals('{"age":null,"parents":[]}', $child->__toString());
+    $this->assertEquals('{"age":null,"parents":[]}', $child->toJSON());
     $child->age = 10;  /// OK
-    $this->assertEquals('{"age":10,"parents":[]}', $child->__toString());
+    $this->assertEquals('{"age":10,"parents":[]}', $child->toJSON());
     $child->parents = array(new Adult); // OK!
     $this->assertEquals(10, $child->age);
-    $this->assertEquals('{"age":10,"parents":[{}]}', $child->__toString());
+    $this->assertEquals('{"age":10,"parents":[{}]}', $child->toJSON());
   }
 }

@@ -78,7 +78,7 @@ abstract class StronglyTypedJson
         return $objectVars;
     }
 
-    public function __toString()
+    public function toJSON()
     {
         return json_encode($this->toArray());
     }
